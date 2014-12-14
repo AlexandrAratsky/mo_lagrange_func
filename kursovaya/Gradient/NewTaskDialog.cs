@@ -221,7 +221,61 @@ namespace OptLab.Gradient
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var task = new LagrangeSearchTask(_func._f, _func._dxf, _func._dyf,
+                                               new Vector(Single.Parse(txtX.Text), Single.Parse(txtY.Text))) { Name = txtName.Text };
+                foreach (var it in listF.Items)
+                {
+                    var tmp = (Tuple<Tuple<bool, int>, FuncStr>)((ListBoxItem)it).Tag;
+                    if (tmp.Item1.Item1) task.AddHFunc(tmp.Item1.Item2,new Function(tmp.Item2._f),new VectorFunction(tmp.Item2._dxf,tmp.Item2._dyf), tmp.Item2._coef);
+                    else task.AddLFunc(tmp.Item1.Item2, new Function(tmp.Item2._f), new VectorFunction(tmp.Item2._dxf, tmp.Item2._dyf), tmp.Item2._coef);
+                }
+                task.Penalty = new Penalty(getType(),Single.Parse(txtGammaZ.Text),Single.Parse(txtGammaF.Text));
+                _list.Add(task);
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void SaveFunc()
+        {
+            if (radioButton1.Checked) _func._f = richBox.Text;
+            else if (radioButton2.Checked) _func._dxf = richBox.Text;
+            else if (radioButton3.Checked) _func._dyf = richBox.Text;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            richBox.Text = _func._f;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            richBox.Text = _func._dxf;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            richBox.Text = _func._dyf;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFunc();
         }
     }
 

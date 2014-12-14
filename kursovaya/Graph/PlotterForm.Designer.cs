@@ -132,7 +132,7 @@
             // 
             this.showPointsToolStripMenuItem.CheckOnClick = true;
             this.showPointsToolStripMenuItem.Name = "showPointsToolStripMenuItem";
-            this.showPointsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showPointsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.showPointsToolStripMenuItem.Text = "Show points";
             this.showPointsToolStripMenuItem.Click += new System.EventHandler(this.showPointsToolStripMenuItem_Click);
             // 
@@ -140,7 +140,7 @@
             // 
             this.showGridToolStripMenuItem1.CheckOnClick = true;
             this.showGridToolStripMenuItem1.Name = "showGridToolStripMenuItem1";
-            this.showGridToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.showGridToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.showGridToolStripMenuItem1.Text = "Show grid";
             this.showGridToolStripMenuItem1.Click += new System.EventHandler(this.showGridToolStripMenuItem1_Click);
             // 
@@ -148,7 +148,7 @@
             // 
             this.showAreaToolStripMenuItem.CheckOnClick = true;
             this.showAreaToolStripMenuItem.Name = "showAreaToolStripMenuItem";
-            this.showAreaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showAreaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.showAreaToolStripMenuItem.Text = "Show area L";
             this.showAreaToolStripMenuItem.Click += new System.EventHandler(this.showAreaToolStripMenuItem_Click);
             // 
@@ -156,7 +156,7 @@
             // 
             this.showAreaHToolStripMenuItem.CheckOnClick = true;
             this.showAreaHToolStripMenuItem.Name = "showAreaHToolStripMenuItem";
-            this.showAreaHToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showAreaHToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.showAreaHToolStripMenuItem.Text = "Show area H";
             this.showAreaHToolStripMenuItem.Click += new System.EventHandler(this.showAreaHToolStripMenuItem_Click);
             // 

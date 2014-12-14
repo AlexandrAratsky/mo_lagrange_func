@@ -116,8 +116,9 @@ namespace OptLab.Gradient
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            var ts = new NewTaskDialog() {MdiParent = this.MdiParent, ListTask = _list };
-            if (ts.ShowDialog() == DialogResult.OK ) LoadList();
+            var ts = new NewTaskDialog() { ListTask = _list };
+            var res = ts.ShowDialog();
+            if (res == DialogResult.OK ) LoadList();
         }
 
         private void btnDel_Click(object sender, EventArgs e)

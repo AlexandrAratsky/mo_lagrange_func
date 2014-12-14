@@ -1,4 +1,7 @@
-﻿namespace OptLab.Gradient
+﻿using System;
+using OptLab.Func;
+
+namespace OptLab.Gradient
 {
     partial class NewTaskDialog
     {
@@ -34,6 +37,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -120,6 +124,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
@@ -131,6 +136,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Целевая функция";
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::OptLab.Properties.Resources.tick_4854;
+            this.button1.Location = new System.Drawing.Point(254, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -141,6 +158,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "(∂/∂y)Q";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -152,6 +170,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "(∂/∂x)Q";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -164,6 +183,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Q(x,y)";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // richBox
             // 
@@ -228,6 +248,7 @@
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -505,5 +526,19 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox funCombo;
+
+        private Penalty.Type getType()
+        {
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0: return Penalty.Type.Constant;
+                case 1: return Penalty.Type.Adaptive;
+                case 2: return Penalty.Type.Linear;
+                case 3: return Penalty.Type.Square;
+                default: throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private System.Windows.Forms.Button button1;
     }
 }
