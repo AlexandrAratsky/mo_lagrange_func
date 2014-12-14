@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD6034FC-8BD6-42AB-82B8-524B92F981A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OptLab</RootNamespace>
+    <AssemblyName>OptLab</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="info.lundin.math">
+      <HintPath>..\packages\info.lundin.math.dll.1.1\lib\net40\info.lundin.math.dll</HintPath>
+    </Reference>
+    <Reference Include="MathParser">
+      <HintPath>..\packages\MathParser.dll</HintPath>
+    </Reference>
+    <Reference Include="NCalc">
+      <HintPath>..\packages\NCalc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Func\Function.cs" />
+    <Compile Include="Func\GradientTask.cs" />
+    <Compile Include="Func\LagrangeSearchTask.cs" />
+    <Compile Include="Func\Penalty.cs" />
+    <Compile Include="Func\HookeJeevesTask.cs" />
+    <Compile Include="Func\Vector.cs" />
+    <Compile Include="Func\VectorFunction.cs" />
+    <Compile Include="Gradient\GradientSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gradient\GradientSearchForm.Designer.cs">
+      <DependentUpon>GradientSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gradient\NewTaskDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gradient\NewTaskDialog.Designer.cs">
+      <DependentUpon>NewTaskDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\ContourPlot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Graph\ContourPlot.Designer.cs">
+      <DependentUpon>ContourPlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\PlotterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\PlotterForm.Designer.cs">
+      <DependentUpon>PlotterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Gradient\GradientSearchForm.resx">
+      <DependentUpon>GradientSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gradient\NewTaskDialog.resx">
+      <DependentUpon>NewTaskDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\ContourPlot.resx">
+      <DependentUpon>ContourPlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\PlotterForm.resx">
+      <DependentUpon>PlotterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_styles_5919.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-freeform-line_6979.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-freeform-line-filled_3110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color_swatch_2_2267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-freeform-line_4964.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_1582.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_position-size_1807.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_dropdown_5136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_save_4436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_add_5172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_delete_1135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_edit_4269.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_go_7519.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_edit_8938.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_delete_9938.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_add_9933.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_edit_5935.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_delete_9010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_add_6423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_go_2552.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve_go_7418.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_add_51721.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line_delete_11351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation_7473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick_4854.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_3186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link_add_4806.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_7856.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector_delete_5611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector_add_1726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add_6100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_7615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-clear_9783.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_go_9486.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_save_9206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_save_44361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_dropdown_51361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wordprocessing_4097.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

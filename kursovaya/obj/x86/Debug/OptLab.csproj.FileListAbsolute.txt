@@ -1,0 +1,15 @@
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.csprojResolveAssemblyReference.cache
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.Graph.PlotterForm.resources
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.csproj.GenerateResource.Cache
+C:\unn\mo\kursovaya\kursovaya\bin\Debug\info.lundin.math.dll
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.Properties.Resources.resources
+C:\unn\mo\kursovaya\kursovaya\bin\Debug\OptLab.exe
+C:\unn\mo\kursovaya\kursovaya\bin\Debug\OptLab.pdb
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.exe
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.pdb
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.Gradient.GradientSearchForm.resources
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.Gradient.NewTaskDialog.resources
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.Graph.ContourPlot.resources
+C:\unn\mo\kursovaya\kursovaya\bin\Debug\NCalc.dll
+C:\unn\mo\kursovaya\kursovaya\bin\Debug\MathParser.dll
+C:\unn\mo\kursovaya\kursovaya\obj\x86\Debug\OptLab.MainForm.resources
